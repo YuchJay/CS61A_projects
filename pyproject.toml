@@ -1,3 +1,10 @@
+[project]
+name = "cs61a"
+version = "0.1.0"
+description = "CS61A learning projects, labs, and homework"
+requires-python = ">=3.11"
+dependencies = []
+
 [tool.ruff]
 # 目标Python版本（根据你的实际情况修改，比如 "3.10"、"3.11" 等）
 target-version = "py311"

@@ -5,6 +5,17 @@
 __pycache__/
 *.pyc
 
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Ruff cache
+.ruff_cache/
+
 # OK autograder state
 .ok_history
 .ok_storage
+.ok_context
+.ok_consent
+.ok_disabled
