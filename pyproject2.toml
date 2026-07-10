@@ -1,0 +1,58 @@
+[tool.ruff]
+# 目标Python版本（根据你的实际情况修改，比如 "3.10"、"3.11" 等）
+target-version = "py311"
+
+# 要检查的文件（排除常见的非代码文件）
+extend-exclude = [
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "venv",
+    "dist",
+    "build",
+    "__pycache__",
+]
+
+# 行长度（根据你团队的约定，常用100或120）
+line-length = 100
+
+# 选择要启用的检查规则（E: pycodestyle, F: Pyflakes, I: isort, UP: pyupgrade 等）
+select = [
+    "E",    # pycodestyle 错误（如缩进、空格）
+    "W",    # pycodestyle 警告
+    "F",    # Pyflakes（如未使用的变量、导入）
+    "I",    # isort（导入排序）
+    "N",    # pep8-naming（命名规范）
+    "UP",   # pyupgrade（语法升级建议）
+    "B",    # flake8-bugbear（常见bug模式）
+    "C90",  # mccabe（代码复杂度检查）
+]
+
+# 忽略某些规则（根据需要调整）
+ignore = [
+    "E501",   # 行太长（由格式化器处理，不归Linter管）
+    "E402",   # 导入不在文件顶部（有时在脚本中有特殊需求）
+]
+
+[tool.ruff.format]
+# 格式化时每行最大宽度（与上面的 line-length 保持一致）
+line-length = 100
+
+# 引号风格（"double" 或 "single"）
+quote-style = "double"
+
+# 缩进宽度
+indent-style = "space"
+indent-width = 4
+
+# 是否在需要时使用尾随逗号
+skip-magic-trailing-comma = false
+
+[tool.ruff.lint.per-file-ignores]
+# 对某些文件类型放宽规则（比如测试文件）
+"tests/**/*.py" = [
+    "S101",   # 允许在测试中使用 assert
+    "F811",   # 允许测试中重复定义函数
+]
