@@ -145,7 +145,7 @@ def count_cond(condition):
     return count
 
 
-from operator import add, sub
+from operator import add, sub  # noqa: F401
 
 
 def caesar_generator(num, op):
@@ -190,7 +190,7 @@ def is_palindrome(n):
     True
     """
     x, y = n, 0
-    f = lambda: y * 10 + x % 10
+    f = lambda: y * 10 + x % 10  # noqa: E731
     while x > 0:
         x, y = x // 10, f()
     return y == n
